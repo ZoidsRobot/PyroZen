@@ -18,7 +18,7 @@ from config import BLACKLIST_GCAST
 from config import CMD_HANDLER as cmd
 from PyroZen.helpers.adminHelpers import DEVS
 from PyroZen.helpers.basic import edit_or_reply
-#from PyroZen.helpers.misc import HAPP, in_heroku
+from PyroZen.helpers.misc import HAPP, in_heroku
 from PyroZen.helpers.tools import get_arg
 from PyroZen.utils.misc import restart
 
