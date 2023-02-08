@@ -18,7 +18,7 @@ from config import BLACKLIST_GCAST
 from config import CMD_HANDLER as cmd
 from PyroZen.helpers.adminHelpers import DEVS
 from PyroZen.helpers.basic import edit_or_reply
-from PyroZen.helpers.misc import HAPP, in_heroku
+#from PyroZen.helpers.misc import HAPP, in_heroku
 from PyroZen.helpers.tools import get_arg
 from PyroZen.utils.misc import restart
 
@@ -26,12 +26,12 @@ from .help import add_command_help
 
 while 0 < 6:
     _GCAST_BLACKLIST = get(
-        "https://raw.githubusercontent.com/BionXP/Zenblack/master/blacklistgcast.json"
+        "https://raw.githubusercontent.com/ionnotXD/layla/master/blacklistgcast.json"
     )
     if _GCAST_BLACKLIST.status_code != 200:
         if 0 != 5:
             continue
-        GCAST_BLACKLIST = [-1001473548283, -1001390552926, -1001302879778]
+        GCAST_BLACKLIST = [-1001287188817, -1001473548283, -1001390552926, -1001302879778]
         break
     GCAST_BLACKLIST = _GCAST_BLACKLIST.json()
     break
@@ -43,9 +43,9 @@ del _GCAST_BLACKLIST
 @Client.on_message(filters.command("gcast", cmd) & filters.me)
 async def gcast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        Man = await edit_or_reply(message, "`𝚂𝙰𝙱𝙰𝚁 𝙻𝙰𝙷 𝙺𝙰𝚄 𝙳𝙸𝙺𝙸𝚃 𝙺𝙾𝙽𝚃𝙾𝙻 𝙸𝙽𝙸 𝚄𝙳𝙰𝙷 𝙼𝙰𝚄 𝙳𝙸 𝙺𝙸𝚁𝙸𝙼 𝙺𝙴 𝚂𝙴𝙼𝚄𝙰 𝙶𝚁𝙾𝚄𝙿 𝙹𝙰𝙼𝙴𝚃...`")
+        PyroZen = await edit_or_reply(message, "`𝚂𝙰𝙱𝙰𝚁 𝙻𝙰𝙷 𝙺𝙰𝚄 𝙳𝙸𝙺𝙸𝚃 𝙺𝙾𝙽𝚃𝙾𝙻 𝙸𝙽𝙸 𝚄𝙳𝙰𝙷 𝙼𝙰𝚄 𝙳𝙸 𝙺𝙸𝚁𝙸𝙼 𝙺𝙴 𝚂𝙴𝙼𝚄𝙰 𝙶𝚁𝙾𝚄𝙿 𝙹𝙰𝙼𝙴𝚃...`")
     else:
-        return await message.edit_text("**Pesannya Mana Kontol**")
+        return await message.edit_text("**Pesannya Mana Sayang**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -66,7 +66,7 @@ async def gcast_cmd(client: Client, message: Message):
                 except Exception:
                     error += 1
                     await asyncio.sleep(0.3)
-    await Man.edit_text(
+    await PyroZen.edit_text(
         f"**Berhasil Mengirim Pesan Ke** `{done}` **Grup, Gagal Mengirim Pesan Ke** `{error}` **Grup**"
     )
 
@@ -75,9 +75,8 @@ async def gcast_cmd(client: Client, message: Message):
 @Client.on_message(filters.command("gucast", cmd) & filters.me)
 async def gucast_cmd(client: Client, message: Message):
     if message.reply_to_message or get_arg(message):
-        Man = await edit_or_reply(message, "`𝚂𝙰𝙱𝙰𝚁 𝙻𝙰𝙷 𝙺𝙰𝚄 𝙳𝙸𝙺𝙸𝚃 𝙺𝙾𝙽𝚃𝙾𝙻 𝙸𝙽𝙸 𝚄𝙳𝙰𝙷 𝙼𝙰𝚄 𝙳𝙸 𝙺𝙸𝚁𝙸𝙼 𝙺𝙴 𝚂𝙴𝙼𝚄𝙰 𝙺𝙰𝚆𝙰𝙽 𝙹𝙰𝙼𝙴𝚃 𝙼𝚄...`")
-    else:
-        return await message.edit_text("**Pesannya Mana Kontol**")
+        PyroZen = await edit_or_reply(message, "`𝚂𝙰𝙱𝙰𝚁 𝚈𝙰 𝚂𝙰𝚈𝙰𝙽𝙶 𝙸𝙽𝙸 𝚄𝙳𝙰𝙷 𝙼𝙰𝚄 𝙳𝙸 𝙺𝙸𝚁𝙸𝙼 𝙺𝙴 𝚂𝙴𝙼𝚄𝙰 𝙺𝙰𝚆𝙰𝙽 𝙹𝙰𝙼𝙴𝚃 𝙼𝚄...`")
+        return await message.edit_text("**Pesannya Mana Sayang**")
     done = 0
     error = 0
     async for dialog in client.get_dialogs():
@@ -98,7 +97,7 @@ async def gucast_cmd(client: Client, message: Message):
                 except Exception:
                     error += 1
                     await asyncio.sleep(0.3)
-    await Man.edit_text(
+    await PyroZen.edit_text(
         f"**Berhasil Mengirim Pesan Ke** `{done}` **chat, Gagal Mengirim Pesan Ke** `{error}` **chat**"
     )
 
