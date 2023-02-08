@@ -188,7 +188,7 @@ add_command_help(
         ],
         [
             "delblacklist",
-            f"Untuk Menghapus grup tersebut dari blacklist gcast.\n\n  •  **Note : **Ketik perintah** `{cmd}addblacklist` **dan** `{cmd}delblacklist` **di grup yang kamu Blacklist.",
+            f"Untuk Menghapus grup tersebut dari blacklist gcast.\n\n",
         ],
     ],
 )
