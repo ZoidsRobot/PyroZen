@@ -25,9 +25,9 @@ auth_url = r["auth_url"]
 
 @Client.on_message(filters.command(["tg", "telegraph"], cmd) & filters.me)
 async def uptotelegraph(client: Client, message: Message):
-    Man = await edit_or_reply(message, "`Processing . . .`")
+    PyroZen = await edit_or_reply(message, "`Processing . . .`")
     if not message.reply_to_message:
-        await Man.edit(
+        await PyroZen.edit(
             "**Mohon Balas Ke Pesan, Untuk Mendapatkan Link dari Telegraph.**"
         )
         return
@@ -39,13 +39,13 @@ async def uptotelegraph(client: Client, message: Message):
         try:
             media_url = upload_file(m_d)
         except exceptions.TelegraphException as exc:
-            await Man.edit(f"**ERROR:** `{exc}`")
+            await PyroZen.edit(f"**ERROR:** `{exc}`")
             os.remove(m_d)
             return
         U_done = (
             f"**Berhasil diupload ke** [Telegraph](https://telegra.ph/{media_url[0]})"
         )
-        await Man.edit(U_done)
+        await PyroZen.edit(U_done)
         os.remove(m_d)
     elif message.reply_to_message.text:
         page_title = get_text(message) if get_text(message) else client.me.first_name
@@ -54,10 +54,10 @@ async def uptotelegraph(client: Client, message: Message):
         try:
             response = telegraph.create_page(page_title, html_content=page_text)
         except exceptions.TelegraphException as exc:
-            await Man.edit(f"**ERROR:** `{exc}`")
+            await PyroZen.edit(f"**ERROR:** `{exc}`")
             return
         wow_graph = f"**Berhasil diupload ke** [Telegraph](https://telegra.ph/{response['path']})"
-        await Man.edit(wow_graph)
+        await PyroZen.edit(wow_graph)
 
 
 add_command_help(
