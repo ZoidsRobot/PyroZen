@@ -63,7 +63,6 @@ async def alive(client: Client, message: Message):
             xx.delete(),
             send(
                 message.chat.id,
-                alive_logo,
                 caption=man,
                 reply_to_message_id=ReplyCheck(message),
             ),
