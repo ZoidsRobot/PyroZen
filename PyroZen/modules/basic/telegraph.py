@@ -19,7 +19,7 @@ from PyroZen.helpers.tools import *
 from .help import *
 
 telegraph = Telegraph()
-r = telegraph.create_account(short_name="PyroMan-Userbot")
+r = telegraph.create_account(short_name="telegram")
 auth_url = r["auth_url"]
 
 
