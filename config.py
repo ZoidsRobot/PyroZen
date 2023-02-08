@@ -30,6 +30,7 @@ BOTLOG_CHATID = int(getenv("BOTLOG_CHATID") or 0)
 BOT_VER = "1.1.5@main"
 BRANCH = getenv("BRANCH", "main") #don't change
 CMD_HANDLER = [".", "?", "!", "*", "-"]
+CMD_HNDLR = [".", "?", "!", "*", "-"]
 OWNER_ID = getenv("OWNER_ID", "")
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 OPENAI_API = getenv("OPENAI_API", "")
