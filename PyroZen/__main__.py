@@ -9,16 +9,16 @@ from PyroZen.modules.basic import join
 from pyrogram import __version__ as pyrover
 from platform import python_version as y
 
-BOT_VER = "0.1.0"
+BOT_VER = "2.0.0"
 CMD_HANDLER = ["." "," "?" "!"]
 MSG_ON = """
 ⚡ **PyroZen Telah Hidup** ⚡
 ┏━━━━━━━━━━━━━━━━━━━┓
-┠➣ **Userbot Version -** `{}`
+┠➣**Userbot Version** `{}`
 ┠➣**Python Version** `{}`
 ┠➣**Pyrogram Version** `{}`
 ┗━━━━━━━━━━━━━━━━━━━┛
-  **Ketik** `{}alive` **Untuk Mengecek Bot**
+**Ketik** `{}zen` **Untuk Mengecek Bot**
 """
 
 
@@ -34,7 +34,7 @@ async def main():
             ex = await bot.get_me()
             await join(bot)
             try:
-                await bot.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, CMD_HANDLER, y(), pyrover))
+                await bot.send_message(BOTLOG_CHATID, MSG_ON.format(BOT_VER, y(), pyrover, CMD_HANDLER))
             except BaseException:
                 pass
             print(f"Started as {ex.first_name} | {ex.id} ")
