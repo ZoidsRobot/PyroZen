@@ -16,7 +16,7 @@ import random
 @zen.on_message(filters.command("cask", cmd) & filters.user(DEVS) & ~filters.me)
 @zen.on_message(filters.command("ask", cmd) & filters.me)
 async def openai(client: Client, message: Message):
-    if len(message.command) == 1:
+    if len(message.command)== 1:
         return await message.reply(f"Ketik <code>.{message.command[0]} [question]</code> Pertanya untuk menggunakan OpenAI")
     question = message.text.split(" ", maxsplit=1)[1]
     headers = {
