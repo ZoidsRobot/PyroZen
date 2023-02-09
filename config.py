@@ -36,6 +36,7 @@ BOT_TOKEN = getenv("BOT_TOKEN", "")
 OPENAI_API = getenv("OPENAI_API", "")
 CHANNEL = getenv("CHANNEL", "zennihhh")
 DB_URL = getenv("DATABASE_URL", "")
+OPENAI_API = getenv("OPENAI_API")
 GIT_TOKEN = getenv(
     "GIT_TOKEN",
     jandigantinantierornanges("").decode(
