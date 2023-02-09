@@ -78,33 +78,6 @@ async def alive_function(message: Message, answers):
     return answers
 
 
-async def ping_function(message: Message, answers):
-    start = datetime.now()
-    uptime = await get_readable_time((time.time() - StartTime))
-    end = datetime.now()
-    duration = (end - start).microseconds / 1000
-    msg = (
-        f"<b>⚡𝙿𝚈𝚁𝙾𝚉𝙴𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃⚡</b>\n\n"
-        f"<b>𝗣𝗼𝗻𝗴<b>\n"
-        f"├•ᴜᴘᴛɪᴍᴇ :</b> <code>{uptime}</code>\n"
-        f"├•ᴅᴜʀᴀᴛɪᴏɴ :</b> <code>{duration}ms</code>\n"
-    )
-    answers.append(
-        InlineQueryResultArticle(
-            title="ping",
-            description="Check Bot's Stats",
-            thumb_url="https://telegra.ph/file/8254768833ab62009c125.jpg",
-            input_message_content=InputTextMessageContent(
-                msg, parse_mode=ParseMode.HTML, disable_web_page_preview=True
-            ),
-            reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Support", url="t.me/ZennXSupport")]]
-            ),
-        )
-    )
-    return answers
-
-
 async def Zenman_function(message: Message, answers):
     msg = (
         f"𝙿𝚈𝚁𝙾𝚉𝙴𝙽-𝚄𝚂𝙴𝚁𝙱𝙾𝚃 \n"
@@ -160,9 +133,6 @@ async def inline_query_handler(client: Client, query):
         elif string_given.startswith("helper"):
             answers = await help_function(answers)
             await client.answer_inline_query(query.id, results=answers, cache_time=0)
-        elif string_given.startswith("ping"):
-            answers = await ping_function(query, answers)
-            await client.answer_inline_query(query.id, results=answers, cache_time=5)
         elif string_given.startswith("Zen"):
             answers = await Zen_function(query, answers)
             await client.answer_inline_query(query.id, results=answers, cache_time=0)
