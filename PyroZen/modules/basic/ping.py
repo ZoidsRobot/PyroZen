@@ -77,7 +77,7 @@ async def pingme(client: Client, message: Message):
     start = datetime.now()
     end = datetime.now()
     duration = (end - start).microseconds / 1000
-    await message.delete_text(
+    await message.delete(
         f"❏ **Pʏʀᴏᴢᴇɴ-Usᴇʀʙᴏᴛ ✨**\n"
         f"├• **Pɪɴɢᴇʀ** - `%sms`\n"
         f"├• **Uᴘᴛɪᴍᴇ -** `{uptime}` \n"
