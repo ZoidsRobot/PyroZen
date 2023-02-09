@@ -21,6 +21,7 @@ ALIVE_EMOJI = getenv("ALIVE_EMOJI", "✮")
 ALIVE_LOGO = getenv("ALIVE_LOGO", "https://telegra.ph/file/40a0ecc9b7f5083800118.jpg")
 ALIVE_TEKS_CUSTOM = getenv("ALIVE_TEKS_CUSTOM", "Hey, I am alive.")
 API_HASH = getenv("API_HASH")
+OPENAI_API = getenv("OPENAI_API", "")
 API_ID = int(getenv("API_ID", ""))
 BLACKLIST_CHAT = getenv("BLACKLIST_CHAT", None)
 if not BLACKLIST_CHAT:
