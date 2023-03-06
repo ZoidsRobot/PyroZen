@@ -61,7 +61,7 @@ async def alive(client: Client, message: Message):
     try:
         await asyncio.gather(
            await xx.delete(),
-            send(
+           await send(
                 message.chat.id,
                 caption=man,
                 reply_to_message_id=ReplyCheck(message),
