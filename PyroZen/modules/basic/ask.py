@@ -36,10 +36,10 @@ async def openai(client: Client, message: Message):
         await msg.edit("Terjadi Kesalahan!!\nAnda Belum Memasukan OPENAI_API_KEY")
         
 add_command_help(
-    "google",
+    "ask",
     [
         [
-            f"google atau {cmd}ask",
+            f"openai atau {cmd}ask",
             "Untuk Bertanya Pada Bot",
         ]
     ],
